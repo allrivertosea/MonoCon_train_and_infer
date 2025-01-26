@@ -75,6 +75,7 @@ The structure of the data files should be as below.
 ```
 ### Dataset split: 
 Use the script split_train_val.py to generate train.txt and val.txt, and use the script to_train_val.py to split the labeled training data (7481 frames) into train (3712 frames) and val (3769 frames).
+<img src="save_output/rec/dataset_structure.png"> 
 
 ## Usage
 ### Training
@@ -90,6 +91,7 @@ python train.py
 • Set the number of CPU threads, default _C.DATA.NUM_WORKERS = 4.
 • Set the interval for validating the model and saving the model, default _C.PERIOD.EVAL_PERIOD = 10.
 ```
+<img src="save_output/rec/train_200epoch.png"> 
 
 
 ### Evaluation
@@ -99,6 +101,7 @@ python test.py  --config_file       [FILL]      # Config file (.yaml file)
                 --gpu_id            [Optional]  # Index of GPU to use for testing (Default: 0)
                 --evaluate                      # Perform evaluation (Quantitative Results)
 ```
+<img src="save_output/rec/eval_results.png"> 
 
 ### Inference
 ```bash
@@ -111,6 +114,7 @@ python test.py  --config_file       [FILL]      # Config file (.yaml file)
 ```bash
 python test.py --config_file checkpoints_train/config.yaml --checkpoint_file checkpoints_train/checkpoints/epoch_200_final.pth --visualize --save_dir save_output --gpu_id 0
 ```
+<img src="save_output/rec/infer_result.png"> 
 
 ### Video Inference on KITTI Raw Dataset
 The KITTI Raw Dataset can be downloaded by scene from [here](https://www.cvlibs.net/datasets/kitti/raw_data.php?type=city). (You will probably need to log in.)  
